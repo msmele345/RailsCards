@@ -1,0 +1,7 @@
+<h1>Choose your Deck:</h1>
+<% @decks.each do |deck| %>
+  <div class="decks-list">
+    <h3 class="decks-name"><%= link_to deck.name, deck %></h3>
+  </div>
+<% end %>
+
