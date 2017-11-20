@@ -1,0 +1,4 @@
+<h2>Play a new round.</h2>
+<%= form_for([@deck, @deck.rounds.build]) do |f| %>
+  <%= f.submit "Play deck!" %>
+<% end %>
