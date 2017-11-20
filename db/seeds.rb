@@ -10,6 +10,8 @@ require 'faker'
 
 5.times do
 user = {:username => Faker::Internet.user_name, :email => Faker::Internet.safe_email, :password => 'password'}
+
+ User.create!(user)
 end
 
 # Deck.create(:name => "Life Questions")
