@@ -1,0 +1,11 @@
+  <% if @user.errors.any? %>
+    <div class="errors">
+      <!-- pluralize: if there is more than 1 error, it will pluralize "error"; elase it will just be 'error' -->
+      <h3><%= pluralize(@user.errors.count, "error") %> prevented this account from saving.</h3>
+      <ul>
+        <% @user.errors.full_messages.each do |error| %>
+          <li><%= error %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
