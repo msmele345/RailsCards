@@ -21,18 +21,14 @@ class RoundsController < ApplicationController
     @card = Card.find(params[:card_id])
     @guess = Guess.create(:round_id => session[:round_id],   :card_id => params[:card_id])
 
-    p "*****"
-    p @round
-    p "******"
-    p card
-    p "*****"
-    p @guess
-
-    if card.answer.downcase == params[:response].downcase
+    if @card.answer.downcase == params[:response].downcase
       @guess.is_correct = true
       @guess.save
     end
-    redirect "/rounds/#{session[:round_id]}"
+
+
+    redirect_to deck_round_path(@deck, @round)
+    ##deck/id/round/id
    end
 
 end

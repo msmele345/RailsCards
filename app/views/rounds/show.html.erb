@@ -1,11 +1,12 @@
 <h3>you are on the rounds show page</h3>
-<div class="question"><%= @card.question %></div>
+<div class="question"><%= @card.question %></div><br>
 
-<%= form_for([@round, @card.guesses]) do |f| %>
+<%= form_for([@round, @card], url: new_guess_path(@round, @card), method: 'post') do |f| %>
 
-  <%= f.label :answer %>
-  <%= f.text_field :answer %>
+<!-- url is the action route! inspect the form to check if it matches! -->
 
-  <%= f.submit %>
+  <%= f.text_field :answer, value: nil %><br><br>
+
+  <%= f.submit "Submit Guess" %><br>
 
 <% end %>

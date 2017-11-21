@@ -3,7 +3,7 @@ class Round < ApplicationRecord
   belongs_to :deck
   has_many :guesses
 
-    def prepare_card
+  def prepare_card
     Card.find(remaining_cards.sample)
   end
 
